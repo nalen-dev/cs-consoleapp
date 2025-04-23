@@ -1,0 +1,14 @@
+/home/nalendev/code/project/MyConsoleApp/bin/Debug/net9.0/MyConsoleApp
+/home/nalendev/code/project/MyConsoleApp/bin/Debug/net9.0/MyConsoleApp.deps.json
+/home/nalendev/code/project/MyConsoleApp/bin/Debug/net9.0/MyConsoleApp.runtimeconfig.json
+/home/nalendev/code/project/MyConsoleApp/bin/Debug/net9.0/MyConsoleApp.dll
+/home/nalendev/code/project/MyConsoleApp/bin/Debug/net9.0/MyConsoleApp.pdb
+/home/nalendev/code/project/MyConsoleApp/obj/Debug/net9.0/MyConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/nalendev/code/project/MyConsoleApp/obj/Debug/net9.0/MyConsoleApp.AssemblyInfoInputs.cache
+/home/nalendev/code/project/MyConsoleApp/obj/Debug/net9.0/MyConsoleApp.AssemblyInfo.cs
+/home/nalendev/code/project/MyConsoleApp/obj/Debug/net9.0/MyConsoleApp.csproj.CoreCompileInputs.cache
+/home/nalendev/code/project/MyConsoleApp/obj/Debug/net9.0/MyConsoleApp.dll
+/home/nalendev/code/project/MyConsoleApp/obj/Debug/net9.0/refint/MyConsoleApp.dll
+/home/nalendev/code/project/MyConsoleApp/obj/Debug/net9.0/MyConsoleApp.pdb
+/home/nalendev/code/project/MyConsoleApp/obj/Debug/net9.0/MyConsoleApp.genruntimeconfig.cache
+/home/nalendev/code/project/MyConsoleApp/obj/Debug/net9.0/ref/MyConsoleApp.dll
