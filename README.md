@@ -12,7 +12,7 @@ This is a simple C# console application built using .NET SDK version 9.0.104. Th
 
 ## Requirements
 
-- [.NET SDK 9.0.104](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
+- [.NET SDK 9.0.104 or later](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
 - Ubuntu 22.04 or compatible OS
 - A terminal/command-line interface
 
