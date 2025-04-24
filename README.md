@@ -12,13 +12,13 @@ This is a simple C# console application built using .NET SDK version 9.0.104. Th
 
 ## Requirements
 
-- [.NET SDK 9.0.104 or later](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
+- [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
 - Ubuntu 22.04 or compatible OS
 - A terminal/command-line interface
 
 ## Installation
 
-1. Make sure you have .NET SDK 9.0.104 installed:
+1. Make sure you have .NET SDK installed:
    ```bash
    dotnet --version
 
