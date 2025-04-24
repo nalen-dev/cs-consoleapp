@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 class Program
 {
@@ -22,10 +23,11 @@ class Program
 
         try
         {
-            byte[] result1 = ConvertWordToNumberFormat(input);
+            byte[] result1 = ConvertWordToNumberFormat(input, 1, true);
             int result2 = CalculateConvertVersion(result1);
             var resultSeq = GenerateSequence(result2);
-            var result3 = GenerateChar(resultSeq);
+            var result3 = GenerateChar(resultSeq, true);
+            var result4 = GenerateCharAddLastTwo(result3);
         }
         catch (ArgumentException ex)
         {
@@ -41,43 +43,53 @@ class Program
         if (!char.IsLetter(c))
             throw new ArgumentException("Input Tidak Valid");
 
-        if (c >= 'a')
-            return Lower[c - 'a'];
-
-        return Capital[c - 'A'];
+        return c >= 'a' ? Lower[c - 'a'] : Capital[c - 'A'];
     }
 
-    public static byte[] ConvertWordToNumberFormat(string word)
+    public static byte[] ConvertWordToNumberFormat(string word, int quest, bool print)
     {
         if (string.IsNullOrEmpty(word))
             throw new ArgumentException("Kata tidak boleh kosong");
 
-        Console.Write("Jawaban no 1: ");
+        if (print)
+            Console.Write("Jawaban no 1: ");
 
         byte[] result = new byte[word.Length];
         for (int i = 0; i < word.Length; i++)
         {
-            result[i] = ConvertChar(word[i]);
-            Console.Write(result[i]);
+            if (quest == 3 && result.Length - i <= 2)
+            {
+                result[i] = ConvertChar(word[i]);
+                result[i]++;
+            }
+            else
+            {
+                result[i] = ConvertChar(word[i]);
+            }
+
+            if (print)
+                Console.Write(result[i]);
         }
 
-        Console.WriteLine();
+        if (print)
+            Console.WriteLine();
+
         return result;
     }
 
     public static int CalculateConvertVersion(byte[] data)
     {
-        int result = 0;
+        int result = data[0];
 
-        for (int i = 0; i < data.Length; i++)
+        for (int i = 1; i < data.Length; i++)
         {
-            if (i % 2 == 0)
-                result -= data[i];
-            else
+            if (i % 2 == 1)
                 result += data[i];
+            else
+                result -= data[i];
         }
 
-        Console.Write("Jawaban no 2: ");
+        Console.Write("\nJawaban no 2: ");
         Console.WriteLine(result);
 
         return result;
@@ -106,7 +118,7 @@ class Program
         return result;
     }
 
-    static List<char> GenerateChar(List<int> target)
+    static List<char> GenerateChar(List<int> target, bool print)
     {
         List<char> result = new List<char>();
 
@@ -118,8 +130,21 @@ class Program
             result.Add(newChar);
         }
 
-        Console.WriteLine("Jawaban no 3: " + string.Join("", result));
+        if (print)
+            Console.WriteLine("Jawaban no 3: " + string.Join("", result));
+
+        return result;
+    }
+
+    static List<char> GenerateCharAddLastTwo(List<char> target)
+    {
+        string targetString = string.Join("", target);
+        byte[] numbers = ConvertWordToNumberFormat(targetString, 3, false);
+        List<int> numbersAsInts = numbers.Select(b => (int)b).ToList();
+        List<char> result = GenerateChar(numbersAsInts, false);
+
+        Console.WriteLine("Jawaban no 4: " + string.Join("", result));
         return result;
     }
 }
-   
+  
