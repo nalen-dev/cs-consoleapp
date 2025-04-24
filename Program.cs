@@ -28,6 +28,7 @@ class Program
             var resultSeq = GenerateSequence(result2);
             var result3 = GenerateChar(resultSeq, true);
             var result4 = GenerateCharAddLastTwo(result3);
+            CharToNumbModEven(result4);
         }
         catch (ArgumentException ex)
         {
@@ -71,8 +72,6 @@ class Program
                 Console.Write(result[i]);
         }
 
-        if (print)
-            Console.WriteLine();
 
         return result;
     }
@@ -145,6 +144,20 @@ class Program
 
         Console.WriteLine("Jawaban no 4: " + string.Join("", result));
         return result;
+    }
+
+    static void CharToNumbModEven(List<char> target)
+    {
+     string targetString = string.Join("", target); 
+     byte[] numbers = ConvertWordToNumberFormat(targetString, 5, false);
+     Console.Write("Jawaban no 5: ");
+     for(int i = 0; i < numbers.Length; i++){
+        if(numbers[i] % 2 ==0){
+          numbers[i]++;
+        }
+        Console.Write(numbers[i]);
+     }
+      Console.Write("\n");
     }
 }
   
